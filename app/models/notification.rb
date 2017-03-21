@@ -1,4 +1,6 @@
 class Notification < ActiveRecord::Base
+  #include Rails.application.routes.url_helpers
+
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
@@ -6,7 +8,6 @@ class Notification < ActiveRecord::Base
   scope :recent,      -> { order(id: :desc) }
   scope :not_emailed, -> { where(emailed_at: nil) }
   scope :for_render,  -> { includes(:notifiable) }
-
 
   def timestamp
     notifiable.created_at
@@ -48,6 +49,17 @@ class Notification < ActiveRecord::Base
 
   def linkable_resource
     notifiable.is_a?(ProposalNotification) ? notifiable.proposal : notifiable
+  end
+
+  def notifiable_url
+    case notifiable.class.name
+    when "ProposalNotification"
+      proposal_path(notifiable.proposal)
+    when "Budget::Investment"
+      budget_investment_path(notifiable.budget, notifiable)
+    else
+      url_for(notifiable)
+    end
   end
 
 end

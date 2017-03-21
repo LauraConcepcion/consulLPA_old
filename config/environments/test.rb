@@ -39,6 +39,7 @@ Rails.application.configure do
     host: 'test'
   }
   config.action_mailer.asset_host = 'http://consul.test'
+  Rails.application.routes.default_url_options[:host] = 'consul.test'
 
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random

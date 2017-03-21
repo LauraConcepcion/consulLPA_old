@@ -1,4 +1,5 @@
 require 'rails_helper'
+include Rails.application.routes.url_helpers
 
 describe Notification do
 
@@ -47,6 +48,31 @@ describe Notification do
     end
   end
 
+  describe "#notifiable_title" do
+
+    it "returns the debate's title when notifiable is a debate" do
+      debate = create(:debate)
+      notification = create :notification, notifiable: debate
+
+      expect(notification.notifiable_title).to eq debate.title
+    end
+
+    it "returns the proposal's title when notifiable is a proposal" do
+      proposal = create(:proposal)
+      notification = create :notification, notifiable: proposal
+
+      expect(notification.notifiable_title).to eq proposal.title
+    end
+
+    it "returns the investment's title when notifiable is an investment" do
+      investment = create(:budget_investment)
+      notification = create :notification, notifiable: investment
+
+      expect(notification.notifiable_title).to eq investment.title
+    end
+
+  end
+
   describe "#notification_action" do
 
     context "when action was comment on a debate" do
@@ -76,6 +102,40 @@ describe Notification do
         expect(notification.notifiable_action).to eq "proposal_notification"
       end
     end
+
+  end
+
+  describe "#notifiable_url" do
+
+    it "returns the debates's url when notifiable is a debate" do
+      debate = create(:debate)
+      notification = create(:notification, notifiable: debate)
+
+      expect(notification.notifiable_url).to eq debate_url(debate)
+    end
+
+    it "returns the proposal's url when notifiable is a proposal" do
+      proposal = create(:proposal)
+      notification = create(:notification, notifiable: proposal)
+
+      expect(notification.notifiable_url).to eq proposal_url(proposal)
+    end
+
+    it "returns the proposal's url when notifiable is a proposal notification" do
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:notification, notifiable: proposal_notification)
+
+      expect(notification.notifiable_url).to eq proposal_path(proposal)
+    end
+
+    it "returns the investment's url when notifiable is an investment" do
+      investment = create(:budget_investment)
+      notification = create(:notification, notifiable: investment)
+
+      expect(notification.notifiable_url).to eq budget_investment_path(investment.budget, investment)
+    end
+
   end
 
 end

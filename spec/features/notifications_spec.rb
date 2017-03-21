@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Notifications" do
+feature "Notifications", :focus do
   let(:author) { create :user }
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
@@ -247,6 +247,27 @@ feature "Notifications" do
     visit notifications_path
 
     expect(page).to have_content "You don't have new notifications"
+  end
+
+  context "Urls" do
+
+    scenario "Debate", :focus do
+      debate = create(:debate)
+      notification = create(:notification, notifiable: debate)
+
+      login_as(debate.author)
+      visit notifications_path
+
+      within("notification_#{notification.id}") do
+        first(:href).click
+        expect(current_path).to eq(debate_path)
+      end
+    end
+
+    scenario "Proposal"
+    scenario "Proposal Notification"
+    scenario "Budget Investment"
+
   end
 
 end
