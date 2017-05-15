@@ -31,9 +31,10 @@ App.PreventDoubleSubmission =
 
     $('.js-spinner').on('click', (event) ->
       console.log("button clicked")
-      $(this).hide()
+      console.log($(this).closest("div").next(".loading").text())
+      $(this).closest("div").next(".loading").show()
     ).on('ajax:success', ->
-      $(this).show()
+      $(this).closest("div").next(".loading").hide()
     )
 
     false
