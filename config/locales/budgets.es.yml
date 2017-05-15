@@ -103,6 +103,8 @@ es:
           other: "%{count} apoyos"
           zero: Sin apoyos
         give_support: Apoyar
+        loading_add: "Añadiendo voto..."
+        loading_remove: "Quitando voto..."
       header:
         check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"

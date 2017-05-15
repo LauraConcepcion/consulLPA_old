@@ -103,6 +103,8 @@ en:
           other: "%{count} supports"
           zero: No supports
         give_support: Support
+        loading_add: "Adding vote..."
+        loading_remove: "Removing vote..."
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
