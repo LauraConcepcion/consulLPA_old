@@ -29,4 +29,11 @@ App.PreventDoubleSubmission =
       App.PreventDoubleSubmission.reset_buttons(buttons)
     )
 
+    $('.js-spinner').on('click', (event) ->
+      console.log("button clicked")
+      $(this).hide()
+    ).on('ajax:success', ->
+      $(this).show()
+    )
+
     false
