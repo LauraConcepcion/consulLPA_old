@@ -45,61 +45,64 @@
   </div>
 </div>
 
-<div class="row margin">
-  <div class="small-12 medium-9 column">
-    <% if @current_filter == "unfeasible" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
-    <% elsif @current_filter == "unselected" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
-    <% end %>
-    <table class="table-fixed">
-      <thead>
-        <th><%= t('budgets.show.group') %></th>
-      </thead>
-      <tbody>
-        <% @budget.groups.each do |group| %>
-          <tr>
-            <td>
-              <% if group.headings.count == 1 %>
-                <%= link_to group.name,
-                            budget_investments_path(@budget,
-                              heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { no_turbolink: true } %>
-              <% else %>
-                <%= link_to group.name,
-                            budget_group_path(@budget, group,
-                              filter: @current_filter) %>
-              <% end %>
-              <br>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+<% unless @budget.finished? %>
+  <div class="row margin">
+    <div class="small-12 medium-9 column">
+      <% if @current_filter == "unfeasible" %>
+        <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+      <% elsif @current_filter == "unselected" %>
+        <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
+      <% end %>
+      <table class="table-fixed">
+        <thead>
+          <th><%= t('budgets.show.group') %></th>
+        </thead>
+        <tbody>
+          <% @budget.groups.each do |group| %>
+            <tr>
+              <td>
+                <% if group.headings.count == 1 %>
+                  <%= link_to group.name,
+                              budget_investments_path(@budget,
+                                heading_id: group.headings.first.id,
+                                filter: @current_filter),
+                              data: { no_turbolink: true } %>
+                <% else %>
+                  <%= link_to group.name,
+                              budget_group_path(@budget, group,
+                                filter: @current_filter) %>
+                <% end %>
+                <br>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
 
-<% if @budget.balloting_or_later? %>
-  <% unless @current_filter == "unfeasible" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unfeasible"),
-                      budget_path(@budget, filter: "unfeasible") %>
-        </small>
+  <% if @budget.balloting_or_later? %>
+    <% unless @current_filter == "unfeasible" %>
+      <div class="row">
+        <div class="small-12 column">
+          <small>
+            <%= link_to t("budgets.show.unfeasible"),
+                        budget_path(@budget, filter: "unfeasible") %>
+          </small>
+        </div>
       </div>
-    </div>
+    <% end %>
+
+    <% unless @current_filter == "unselected" %>
+      <div class="row">
+        <div class="small-12 column">
+          <small>
+            <%= link_to t("budgets.show.unselected"),
+                        budget_path(@budget, filter: "unselected") %>
+          </small>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 
-  <% unless @current_filter == "unselected" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unselected"),
-                      budget_path(@budget, filter: "unselected") %>
-        </small>
-      </div>
-    </div>
-  <% end %>
 <% end %>

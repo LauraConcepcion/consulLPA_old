@@ -97,4 +97,24 @@ feature 'Budgets' do
 
     end
   end
+
+  context "Results" do
+    let(:budget) { create(:budget) }
+
+    background do
+      budget.update(phase: 'finished')
+    end
+
+    scenario "Show", :focus do
+      all_city = create(:budget_group, budget: budget)
+      districts = create(:budget_group, budget: budget)
+
+      visit budget_path(budget)
+
+      expect(page).to_not have_content "Groups"
+      expect(page).to_not have_link all_city.name
+      expect(page).to_not have_link districts.name
+    end
+
+  end
 end
