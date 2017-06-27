@@ -5,11 +5,11 @@ class Budget
     include Taggable
     include Searchable
     include Reclassification
+    include Imageable
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
-
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading

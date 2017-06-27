@@ -90,9 +90,7 @@ module Budgets
     end
 
     def remove_image
-      @investment.image.destroy
-      @investment.image_title = nil
-      @investment.save
+      @investment.image.destroy!
       redirect_to budget_investment_path(@investment.budget, @investment),
                   notice: t("flash.actions.remove_image.budget_investment")
     end
@@ -125,7 +123,7 @@ module Budgets
         params.require(:budget_investment)
               .permit(:title, :description, :external_url, :heading_id,
                       :tag_list, :organization_name, :location, :terms_of_service,
-                      :image_title, :image)
+                      image_attributes: [:title, :attachment])
       end
 
       def load_ballot
