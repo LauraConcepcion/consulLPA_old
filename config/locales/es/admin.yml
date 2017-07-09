@@ -97,10 +97,12 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
+        population: Población
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
+        table_population: Población
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -118,6 +120,7 @@ es:
           valuation_finished: Evaluación finalizada
           valuation_finished_feasible: Viables
           selected: Seleccionadas
+          winners: Ganadoras
           all: Todas
         title: Propuestas de inversión
         assigned_admin: Administrador asignado
@@ -138,7 +141,7 @@ es:
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
-        table_winner: "Ganadora"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -156,8 +159,24 @@ es:
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        compatibility:
+          title: Compatibilidad
+          "true": Incompatible
+          "false": Compatible
+        selection:
+          title: Selección
+          "true": Seleccionado
+          "false": No seleccionado
+        winner:
+          title: Ganador
+          "true": "Si"
+          "false": "No"
       edit:
         classification: Clasificación
+        compatibility: Compatibilidad
+        mark_as_incompatible: Marcar como incompatible
+        selection: Selección
+        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
@@ -835,10 +854,8 @@ es:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
-      update: Actualizar Tema
     users:
       columns:
         name: Nombre
@@ -927,3 +944,4 @@ es:
           updated_at: Última actualización
           status_draft: Borrador
           status_published: Publicada
+          locale: Idioma

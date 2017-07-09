@@ -153,3 +153,4 @@ en:
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
+      incompatibles: Incompatibles

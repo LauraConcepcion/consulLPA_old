@@ -298,7 +298,7 @@ en:
       geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
-      proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
+      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <br>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'"
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
@@ -511,7 +511,7 @@ en:
           one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
           other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
         message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
-        see_all: "Ver todos"
+        see_all: "See all"
       budget_investment:
         found:
           one: "There is an investment with the term '%{query}', you can participate in it instead of opening a new one."

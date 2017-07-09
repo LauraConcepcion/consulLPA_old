@@ -44,7 +44,7 @@ class Comment < ActiveRecord::Base
 
   after_create :call_after_commented
 
-  def self.build(commentable, user, body, p_id=nil)
+  def self.build(commentable, user, body, p_id = nil)
     new commentable: commentable,
         user_id:     user.id,
         body:        body,
@@ -64,7 +64,7 @@ class Comment < ActiveRecord::Base
   end
 
   def author=(author)
-    self.user= author
+    self.user = author
   end
 
   def total_votes
@@ -100,7 +100,7 @@ class Comment < ActiveRecord::Base
   end
 
   def call_after_commented
-    self.commentable.try(:after_commented)
+    commentable.try(:after_commented)
   end
 
   def self.body_max_length

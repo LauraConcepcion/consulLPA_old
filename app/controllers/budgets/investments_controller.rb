@@ -113,7 +113,7 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99)/100.0
+          params[:random_seed] ||= rand(99) / 100.0
           seed = Float(params[:random_seed]) rescue 0
           Budget::Investment.connection.execute("select setseed(#{seed})")
         else
@@ -141,7 +141,7 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
       def tag_cloud

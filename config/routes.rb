@@ -114,10 +114,12 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :result_publication
+      member do
+        get :debate
+        get :draft_publication
+        get :allegations
+        get :result_publication
+      end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
       end
@@ -212,7 +214,6 @@ Rails.application.routes.draw do
         member { patch :toggle_selection }
       end
     end
-
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 

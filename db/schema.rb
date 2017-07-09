@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620132731) do
+ActiveRecord::Schema.define(version: 20170704105112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,21 +95,25 @@ ActiveRecord::Schema.define(version: 20170620132731) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
     t.string  "name",      limit: 50
+    t.string  "slug"
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",     limit: 50
-    t.integer "price",    limit: 8
+    t.string  "name",       limit: 50
+    t.integer "price",      limit: 8
+    t.integer "population"
+    t.string  "slug"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
@@ -161,6 +165,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "image_title"
+    t.boolean  "incompatible",                          default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -198,6 +203,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
     t.text     "description_balloting"
     t.text     "description_reviewing_ballots"
     t.text     "description_finished"
+    t.string   "slug"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -433,6 +439,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -796,6 +803,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
     t.string   "status",             default: "draft"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "locale"
   end
 
   create_table "spending_proposals", force: :cascade do |t|
@@ -845,7 +853,6 @@ ActiveRecord::Schema.define(version: 20170620132731) do
   create_table "tags", force: :cascade do |t|
     t.string  "name",                     limit: 40
     t.integer "taggings_count",                      default: 0
-    t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
