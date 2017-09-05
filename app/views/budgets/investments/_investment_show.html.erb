@@ -10,8 +10,13 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
-      <h1><%= investment.title %></h1>
+      <% if can?(:edit_image, @investment) %>
+        <%= link_to investment_image_button_text(@investment),
+                    edit_image_budget_investment_path(investment.budget, investment),
+                    class: 'button hollow float-right' %>
+      <% end %>
 
+      <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
 
@@ -21,6 +26,23 @@
         <%= investment.heading.name %>
       </div>
       <br>
+
+      <% if investment.image.exists? %>
+        <div class="row">
+          <div class="small-12 column text-center">
+            <figure>
+              <%= image_tag investment.image.url(:large),
+                            title: investment.image_title,
+                            alt: investment.image_title %>
+              <figcaption class="text-right">
+                <em><%= investment.image_title %></em>
+              </figcaption>
+            </figure>
+            <hr>
+          </div>
+        </div>
+      <% end %>
+
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
@@ -116,6 +138,7 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
+        image_url: investment.image.exists? ? investment_image_full_url(investment, :thumb) : '',
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 

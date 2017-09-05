@@ -160,6 +160,11 @@ ActiveRecord::Schema.define(version: 20170720092638) do
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
     t.boolean  "incompatible",                          default: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_title"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
