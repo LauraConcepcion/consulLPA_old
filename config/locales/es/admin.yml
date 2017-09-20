@@ -492,8 +492,6 @@ es:
         booth: "Urna"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        final_recounts: "Recuentos finales"
-        final_recount: "Recuento final (presidente de mesa)"
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -508,7 +506,6 @@ es:
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
         date: "Fecha"
-        count_final: "Recuento final (presidente de mesa)"
         count_by_system: "Votos (automático)"
       index:
         booths_title: "Listado de urnas asignadas"
@@ -579,7 +576,6 @@ es:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
         table_booth_name: "Urna"
-        table_final_recount: "Recuento final (presidente de mesa)"
         table_system_count: "Votos (automático)"
     results:
       index:
