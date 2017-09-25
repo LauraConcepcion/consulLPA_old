@@ -213,7 +213,6 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
-        back: Volver a
         title: Administración
     debates:
       index:
