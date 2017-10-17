@@ -211,3 +211,7 @@ body.home-page main {
 }
 
 
+.button:hover, .button:focus {
+  background-color: darken($brand, 10%);
+}
+
