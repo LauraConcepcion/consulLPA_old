@@ -215,3 +215,36 @@ body.home-page main {
   background-color: darken($brand, 10%);
 }
 
+.jumbo.highlight {
+  background: transparent image-url('background_portada.jpg') no-repeat scroll 0 0/cover;
+  display: inline-block;
+  height: 25rem;
+  width: 100%;
+
+  h1 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    text-shadow: 3px 3px 3px #000;
+    padding: 0.3rem 0.2rem;
+  }
+
+  .row {
+    max-width: 45rem;
+  }
+
+  .button {
+    background-color: #FCAD42;
+  }
+
+  .button:hover, .button:focus {
+    background-color: darken(#FCAD42, 20);
+  }
+
+  & + .row .lead {
+    max-width: 90%;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+  }
+}
