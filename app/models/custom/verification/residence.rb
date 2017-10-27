@@ -23,7 +23,7 @@ class Verification::Residence
   private
 
     def valid_postal_code?
-      postal_code =~ /^280/
+      postal_code =~ /^350/
     end
 
 end
