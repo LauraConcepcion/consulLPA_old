@@ -19,7 +19,7 @@ class SMSApi
 
     request = Net::HTTP::Post.new(@uri.request_uri)
     request.set_form_data(request(phone, code))
-    request["Content-Type"] = "application/json"
+    request["Content-Type"] = "application/x-www-form-urlencoded"
     response = @client.request(request)
     success?(response)
   end
@@ -28,7 +28,7 @@ class SMSApi
     { user_id: Rails.application.secrets.sms_username,
       departamento_id: Rails.application.secrets.sms_department,
       telefono_individual: phone,
-      texto: "Clave para verificarte: #{code}. Oficina de Participación Ciudadana",
+      texto: "Clave para verificarte: #{code}. Participa LPA",
       passwd: Rails.application.secrets.sms_password
     }
   end
