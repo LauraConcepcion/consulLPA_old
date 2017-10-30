@@ -32,7 +32,7 @@
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
 
-    <div class="small-12 column text-center <%= highlight_background %>">
+    <div class="small-12 column text-center">
       <div class="row margin padding">
         <div class="small-8 medium-6 column">
           <h2>
@@ -45,7 +45,7 @@
           <h2>
             <%= image_tag('proponemos.png') %>
             <%= t("welcome.proposal.title") %>
-           </h2>
+          </h2>
           <p><%= t("welcome.proposal.description") %></p>
         </div>
       </div>
@@ -61,7 +61,7 @@
           <h2>
             <%= image_tag('hacemos.png') %>
             <%= t("welcome.do.title") %>
-           </h2>
+          </h2>
           <p><%= t("welcome.do.description") %></p>
         </div>
       </div>
