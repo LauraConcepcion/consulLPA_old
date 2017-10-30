@@ -226,6 +226,7 @@ body.home-page main {
   display: inline-block;
   height: 25rem;
   width: 100%;
+  margin-bottom: 0;
 
   h1 {
     background-color: rgba(0, 0, 0, 0.2);
@@ -241,17 +242,34 @@ body.home-page main {
   }
 
   .button {
-    background-color: #FCAD42;
+    background-color: $brand_blue;
+    padding: 0.6rem;
   }
 
   .button:hover, .button:focus {
-    background-color: darken(#FCAD42, 20);
+    background-color: darken($brand_blue, 20);
   }
 
-  & + .row .lead {
-    max-width: 90%;
-    margin: 0 auto 1rem auto;
-    text-align: center;
+  & + .row.sub-banner {
+    margin: 0;
+    background-color: #f5f4f4;
+    max-width: 100%;
+    padding: 3rem;
+
+    .lead {
+      max-width: 90%;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .button {
+      background-color: $brand_green;
+      color: $text;
+      padding: 0.6rem;
+    }
+    .button:hover {
+      background-color: darken($brand_green, 20);
+    }
   }
 }
 
@@ -259,15 +277,51 @@ body.home-page main {
   color: #fff;
 } 
 
-footer {
-  background-color: $brand;
-  color: $footer-color;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
-  a {
+.footer {
+  border-top: none;
+  padding-top: 0px;
+  min-height: auto;
+
+  footer {
+    background-color: $brand;
     color: $footer-color;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+    a {
+      color: $footer-color;
+    }
+
+    .subfooter {
+      border-top: 1px solid $footer-color;
+    }
   }
-  .subfooter {
-    border-top: 1px solid $footer-color;
+}
+
+main .highlight {
+  background-color: white;
+  h2 {
+    white-space: nowrap;
+  }
+  @media screen and (min-width: 640px) {
+    .row {
+      .medium-6:nth-child(n+1) {
+        padding: 1rem 5% 1rem 15%;
+      }
+      .medium-6:nth-child(n+2) {
+        padding: 1rem 15% 1rem 5%;
+      }
+    }
+  }
+  @media screen and (max-width: 639px) {
+    .row {
+      margin: 0;
+      padding: 0;
+      .small-8 {
+        float: none;
+        margin: auto;
+        padding: 2rem 10% 2rem 10%;
+      }
+    }
   }
 }
