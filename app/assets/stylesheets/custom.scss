@@ -46,7 +46,11 @@ $grey: #f5f4f4;
       vertical-align: super;
     }
   }
-
+  .menu-icon.dark:after,
+  .menu-icon.dark:hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  }
 }
 
 .subnavigation ul li{
@@ -298,8 +302,7 @@ body.home-page main {
   }
 }
 
-main .highlight {
-  background-color: white;
+body.home-page main {
   h2 {
     white-space: nowrap;
   }
