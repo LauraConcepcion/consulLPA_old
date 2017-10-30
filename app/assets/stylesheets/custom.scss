@@ -5,12 +5,26 @@
 //
 
 
-
 .top-bar{
-  .top-bar-title a img{
-    height: 86px;
-    width: 215px;
+  height: 5rem;
+  .subnavigation{
+    background: transparent !important;
   }
+  .top-bar-title{
+    height: 5rem;
+    margin: 0;
+    a img{
+      height: auto;
+      width: 100%;
+      position: relative;
+    }
+  }
+
+}
+
+.subnavigation ul li{
+  margin-left: 1rem;
+  margin-right: 0;
 }
 
 .auth-image h1 {
