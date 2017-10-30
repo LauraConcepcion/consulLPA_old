@@ -76,3 +76,16 @@
 .expanded.budget li, .expanded.budget a{
   color: #fff;
 } 
+
+footer {
+  background-color: $brand;
+  color: $footer-color;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  a {
+    color: $footer-color;
+  }
+  .subfooter {
+    border-top: 1px solid $footer-color;
+  }
+}
