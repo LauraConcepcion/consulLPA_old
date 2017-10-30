@@ -20,14 +20,14 @@
       </span>
 
       <div id="responsive-menu">
-        <div class="top-bar-title">
+        <div class="top-bar-title medium-4">
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
             <%= setting['org_name'] %>
           <% end %>
         </div>
 
-        <div class="top-bar-right">
+        <div class="top-bar-right medium-8">
           <ul class="dropdown menu" data-dropdown-menu>
             <%= render "shared/admin_login_items" %>
             <%= render "devise/menu/login_items" %>
