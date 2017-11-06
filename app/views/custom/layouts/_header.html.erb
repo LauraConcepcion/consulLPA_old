@@ -1,9 +1,12 @@
 <header>
 
-  <div class="top-links">
+  <div class="top-links hide-for-small-only">
     <div class="row">
       <%= render "shared/locale_switcher" %>
-      <div class="hide-for-small-only">
+      <div class="float-right social">
+        <%= render "custom/shared/social_links" %>
+      </div>
+      <div class="hide-for-small-only float-right">
         <%= render "shared/top_links" %>
       </div>
     </div>
@@ -41,9 +44,6 @@
         <div class="show-for-small-only">
           <div class="subnavigation row">
             <%= render "shared/subnavigation" %>
-            <div class="small-12 column">
-              <%= render "shared/top_links" %>
-            </div>
           </div>
         </div>
       </div>
