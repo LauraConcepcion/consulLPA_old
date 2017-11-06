@@ -226,7 +226,11 @@ es:
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: CONSUL logo
+      logo: 'Logo LPGC Decide'
+      logo_town_hall: 'Logo Ayuntamiento de LPGC'
+      external_link_town_hall: http://www.laspalmasgc.es/
+      logo_oficina_participacion: 'Logo Oficina de Participación LPGC'
+      external_link_oficina_participacion: http://www.laspalmasgc.es/es/areas-tematicas/participacion-ciudadana/equipos-territoriales/ 
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
