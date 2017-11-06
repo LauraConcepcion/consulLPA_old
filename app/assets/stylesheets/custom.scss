@@ -53,6 +53,9 @@ $grey: #f5f4f4;
   }
 }
 
+.top-links {
+  background: $brand-green;
+}
 .subnavigation ul li{
   margin-left: 1rem;
   margin-right: 0;
@@ -246,12 +249,12 @@ body.home-page main {
   }
 
   .button {
-    background-color: $brand_blue;
+    background-color: $brand-pink;
     padding: 0.6rem;
   }
 
   .button:hover, .button:focus {
-    background-color: darken($brand_blue, 20);
+    background-color: darken($brand-pink, 20);
   }
 
   & + .row.sub-banner {
@@ -267,12 +270,12 @@ body.home-page main {
       font-size: 1.2rem;
     }
     .button {
-      background-color: $brand_green;
-      color: $text;
+      background-color: $brand-blue;
+      color: white;
       padding: 0.6rem;
     }
     .button:hover {
-      background-color: darken($brand_green, 20);
+      background-color: darken($brand-blue, 20);
     }
   }
 }
@@ -287,7 +290,7 @@ body.home-page main {
   min-height: auto;
 
   footer {
-    background-color: $brand;
+    background-color: $brand-green;
     color: $footer-color;
     padding-top: 3rem;
     padding-bottom: 1rem;
