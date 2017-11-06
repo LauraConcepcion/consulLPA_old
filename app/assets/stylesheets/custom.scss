@@ -30,16 +30,56 @@ $brand-blue: $brand;
       }
     }
   }
-  .menu-icon.dark:after,
-  .menu-icon.dark:hover::after {
-    background: #000;
-    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-  }
 }
 
 .top-links {
   background: $brand-green;
+  .social {
+    a span:before {
+      vertical-align: sub;
+    }
+    li:after {
+      vertical-align: super;
+    }
+  }
 }
+
+@media screen and (max-width: 639px) {
+  .top-bar {
+    height: 3rem;
+    .logo img {
+      height: 75px;
+      width: auto;
+      position: relative;
+    }
+    .top-bar-right {
+      background: white;
+      margin-bottom: 0.5rem;
+      ul.menu {
+        text-align: right;
+        li {
+          display: inline-block;
+          a {
+            color: black;
+            background: none;
+          }
+        }
+      }
+    }
+    .subnavigation {
+      ul {
+        width: 100%;
+        li {
+          border-top: 1px solid $brand;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
 .subnavigation ul li{
   margin-left: 1rem;
   margin-right: 0;
@@ -145,13 +185,16 @@ body.home-page main {
     }
   }
   @media screen and (max-width: 639px) {
-    .row {
-      margin: 0;
-      padding: 0;
-      .small-8 {
-        float: none;
-        margin: auto;
-        padding: 2rem 10% 2rem 10%;
+    .small-12 {
+      padding: 1rem 0;
+      .row {
+        margin: 0;
+        padding: 0;
+        .small-8 {
+          float: none;
+          margin: auto;
+          padding: 1rem 10% 1rem 10%;
+        }
       }
     }
   }
