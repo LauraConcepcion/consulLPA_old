@@ -5,9 +5,9 @@
 //
 
 
-$brand_green: #a8d587;
-$brand_pink: #d5278a;
-$brand_blue: #419bd7;
+$brand-green: #5aab1d;
+$brand-pink: #d5278a;
+$brand-blue: $brand;
 
 .top-bar{
   height: 5rem;
@@ -30,6 +30,9 @@ $brand_blue: #419bd7;
   }
 }
 
+.top-links {
+  background: $brand-green;
+}
 .subnavigation ul li{
   margin-left: 1rem;
   margin-right: 0;
@@ -64,12 +67,12 @@ $brand_blue: #419bd7;
   }
 
   .button {
-    background-color: $brand_blue;
+    background-color: $brand-pink;
     padding: 0.6rem;
   }
 
   .button:hover, .button:focus {
-    background-color: darken($brand_blue, 20);
+    background-color: darken($brand-pink, 20);
   }
 
   & + .row.sub-banner {
@@ -85,12 +88,12 @@ $brand_blue: #419bd7;
       font-size: 1.2rem;
     }
     .button {
-      background-color: $brand_green;
-      color: $text;
+      background-color: $brand-blue;
+      color: white;
       padding: 0.6rem;
     }
     .button:hover {
-      background-color: darken($brand_green, 20);
+      background-color: darken($brand-blue, 20);
     }
   }
 }
@@ -105,7 +108,7 @@ $brand_blue: #419bd7;
   min-height: auto;
 
   footer {
-    background-color: $brand;
+    background-color: $brand-green;
     color: $footer-color;
     padding-top: 3rem;
     padding-bottom: 1rem;
