@@ -8,6 +8,7 @@
 $brand-green: #5aab1d;
 $brand-pink: #d5278a;
 $brand-blue: $brand;
+$grey: #f5f4f4;
 
 .top-bar{
   height: 5rem;
@@ -37,6 +38,9 @@ $brand-blue: $brand;
   .social {
     a span:before {
       vertical-align: sub;
+    }
+    a:hover {
+      text-decoration: none;
     }
     li:after {
       vertical-align: super;
@@ -133,7 +137,7 @@ $brand-blue: $brand;
 
   & + .row.sub-banner {
     margin: 0;
-    background-color: #f5f4f4;
+    background-color: $grey;
     max-width: 100%;
     padding: 3rem;
 
@@ -153,6 +157,8 @@ $brand-blue: $brand;
     }
   }
 }
+
+
 
 .expanded.budget li, .expanded.budget a{
   color: #fff;
@@ -180,6 +186,12 @@ $brand-blue: $brand;
 }
 
 body.home-page main {
+  #participate {
+    background-color: $grey;
+    h3 {
+      text-transform: uppercase;
+    }
+  }
   h2 {
     white-space: nowrap;
   }
