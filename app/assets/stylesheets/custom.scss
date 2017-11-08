@@ -325,6 +325,8 @@ body.home-page main {
   }
 }
 
+
+
 .expanded.budget li, .expanded.budget a{
   color: #fff;
 } 
@@ -351,6 +353,12 @@ body.home-page main {
 }
 
 body.home-page main {
+  #participate {
+    background-color: $grey;
+    h3 {
+      text-transform: uppercase;
+    }
+  }
   h2 {
     white-space: nowrap;
   }
