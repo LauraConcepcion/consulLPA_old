@@ -32,16 +32,16 @@
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
 
-    <div class="small-12 column text-center">
-      <div class="row margin padding">
-        <div class="small-8 medium-6 column">
+    <div class="small-12 column text-center margin">
+      <div class="row small-12 medium-7">
+        <div class="small-12 medium-6 column padding">
           <h2>
             <%= image_tag('debatimos.png') %>
             <%= t("welcome.debates.title") %>
           </h2>
           <p><%= t("welcome.debates.description") %></p>
         </div>
-        <div class="small-8 medium-6 column">
+        <div class="small-12 medium-6 column padding">
           <h2>
             <%= image_tag('proponemos.png') %>
             <%= t("welcome.proposal.title") %>
@@ -49,15 +49,15 @@
           <p><%= t("welcome.proposal.description") %></p>
         </div>
       </div>
-      <div class="row margin padding">
-        <div class="small-8 medium-6 column">
+      <div class="row small-12 medium-7">
+        <div class="small-12 medium-6 column padding">
           <h2>
             <%= image_tag('decidimos.png') %>
             <%= t("welcome.decide.title") %>
           </h2>
           <p><%= t("welcome.decide.description") %></p>
         </div>
-        <div class="small-8 medium-6 column">
+        <div class="small-12 medium-6 column padding">
           <h2>
             <%= image_tag('hacemos.png') %>
             <%= t("welcome.do.title") %>
@@ -72,15 +72,15 @@
         <h3 class="column">Participa en LPA Decide</h3>
       </div>
       <div class="row">
-        <div class="small-10 small-centered medium-4 column">
+        <div class="small-12 medium-4 column">
           <%= image_tag('debate.png') %>
           <p>Opina sobre las cuestiones de la ciudad</p>
         </div>
-        <div class="small-10 small-centered medium-4 column">
+        <div class="small-12 medium-4 column">
           <%= image_tag('propon.png') %>
           <p>Crea propuestas ciudadanas</p>
         </div>
-        <div class="small-10 small-centered medium-4 column">
+        <div class="small-12 medium-4 column">
           <%= image_tag('decide.png') %>
           <p>Elige a qué proyectos se destina el presupuesto participativo</p>
         </div>

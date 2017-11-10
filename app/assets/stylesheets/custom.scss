@@ -195,28 +195,4 @@ body.home-page main {
   h2 {
     white-space: nowrap;
   }
-  @media screen and (min-width: 640px) {
-    .row {
-      .medium-6:nth-child(n+1) {
-        padding: 1rem 5% 1rem 15%;
-      }
-      .medium-6:nth-child(n+2) {
-        padding: 1rem 15% 1rem 5%;
-      }
-    }
-  }
-  @media screen and (max-width: 639px) {
-    .small-12 {
-      padding: 1rem 0;
-      .row {
-        margin: 0;
-        padding: 0;
-        .small-8 {
-          float: none;
-          margin: auto;
-          padding: 1rem 10% 1rem 10%;
-        }
-      }
-    }
-  }
 }
