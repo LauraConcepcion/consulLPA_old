@@ -48,42 +48,6 @@ $grey: #f5f4f4;
   }
 }
 
-@media screen and (max-width: 639px) {
-  .top-bar {
-    height: 3rem;
-    .logo img {
-      height: 75px;
-      width: auto;
-      position: relative;
-    }
-    .top-bar-right {
-      background: white;
-      margin-bottom: 0.5rem;
-      ul.menu {
-        text-align: right;
-        li {
-          display: inline-block;
-          a {
-            color: black;
-            background: none;
-          }
-        }
-      }
-    }
-    .subnavigation {
-      ul {
-        width: 100%;
-        li {
-          border-top: 1px solid $brand;
-          a {
-            color: black;
-          }
-        }
-      }
-    }
-  }
-}
-
 .subnavigation ul li{
   margin-left: 1rem;
   margin-right: 0;
@@ -196,3 +160,54 @@ body.home-page main {
     white-space: nowrap;
   }
 }
+
+
+
+@media screen and (max-width: 639px) {
+  .top-bar {
+    height: 3rem;
+    .logo img {
+      height: 75px;
+      width: auto;
+      position: relative;
+    }
+    .top-bar-right {
+      background: white;
+      margin-bottom: 0.5rem;
+      ul.menu {
+        text-align: right;
+        li {
+          display: inline-block;
+          a {
+            color: black;
+            background: none;
+          }
+        }
+      }
+    }
+    .subnavigation {
+      ul {
+        width: 100%;
+        li {
+          border-top: 1px solid $brand;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .jumbo.highlight {
+    .row {
+      max-width: 90%;
+    }
+    h1{
+      padding: 1rem 1rem;
+      line-height: 1.75rem;
+      font-size: 1.75rem; 
+    }
+  } 
+}
+
+
