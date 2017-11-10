@@ -52,6 +52,7 @@ Setting.create(key: 'proposal_improvement_path', value: nil)
 Setting.create(key: 'map_latitude', value: 51.48)
 Setting.create(key: 'map_longitude', value: 0.0)
 Setting.create(key: 'map_zoom', value: 10)
+Setting.create(key: 'postal_codes', value: "28000-28999,27989,27777")
 
 puts " ✅"
 print "Creating Geozones"

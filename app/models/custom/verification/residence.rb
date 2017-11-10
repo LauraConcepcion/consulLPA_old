@@ -4,20 +4,18 @@ class Verification::Residence
 
   skip_callback :validate, :allowed_age
 
-  validate :postal_code_in_las_palmas_gc
-  validate :residence_in_las_palmas_gc
+  validate :postal_code_in_location
+  validate :residence_in_location
 
-  VALID_POSTAL_CODES = (35001..35019).to_a + [35220, 35229]
-
-  def postal_code_in_las_palmas_gc
+  def postal_code_in_location
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
   end
 
-  def residence_in_las_palmas_gc
+  def residence_in_location
     return if errors.any?
 
     unless residency_valid?
-      errors.add(:residence_in_las_palmas_gc, false)
+      errors.add(:residence_in_location, false)
       store_failed_attempt
       Lock.increase_tries(user)
     end
@@ -40,7 +38,10 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      postal_code.to_i.in?(VALID_POSTAL_CODES)
+      # Example received data '35000-35019,35219'
+      postal_codes = [Setting['postal_codes']][0].sub('-','..').split(',')
+      postal_codes = postal_codes.map {|i| eval(i) }.map {|i| i.is_a?(Range) ? i.to_a : [i]}.flatten
+      postal_code.to_i.in?(postal_codes)
     end
 
     def residency_valid?
