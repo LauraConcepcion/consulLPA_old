@@ -86,7 +86,7 @@ Rails.application.configure do
     user_name:            Rails.application.secrets.username,
     password:             Rails.application.secrets.password,
     authentication:       'plain',
-    tls:                  true,
+    #tls:                  true,
     openssl_verify_mode:  OpenSSL::SSL::VERIFY_NONE,
     enable_starttls_auto: true  }
 
