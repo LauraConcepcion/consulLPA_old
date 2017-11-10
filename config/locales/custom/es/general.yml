@@ -251,6 +251,7 @@ es:
       poll_questions: Votaciones
       budgets: Presupuestos participativos
       spending_proposals: "Propuestas de inversión"
+      register: Regístrate
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
   legacy_legislation:
