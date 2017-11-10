@@ -63,7 +63,6 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = { from: Rails.application.secrets.noreply }
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "http://#{Rails.application.secrets.server_name}"
 
@@ -88,6 +87,7 @@ Rails.application.configure do
     password:             Rails.application.secrets.password,
     authentication:       'plain',
     tls:                  true,
+    openssl_verify_mode:  OpenSSL::SSL::VERIFY_NONE,
     enable_starttls_auto: true  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
