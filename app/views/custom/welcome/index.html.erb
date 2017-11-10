@@ -73,16 +73,22 @@
       </div>
       <div class="row">
         <div class="small-12 medium-4 column">
-          <%= image_tag('debate.png') %>
-          <p>Opina sobre las cuestiones de la ciudad</p>
+          <%= link_to debates_path do %>
+            <%= image_tag('debate.png') %>
+            <p>Opina sobre las cuestiones de la ciudad</p>
+          <% end %>
         </div>
         <div class="small-12 medium-4 column">
-          <%= image_tag('propon.png') %>
-          <p>Crea propuestas ciudadanas</p>
+          <%= link_to debates_path do %>
+            <%= image_tag('propon.png') %>
+            <p>Crea propuestas ciudadanas</p>
+          <% end %>
         </div>
         <div class="small-12 medium-4 column">
-          <%= image_tag('decide.png') %>
-          <p>Elige a qué proyectos se destina el presupuesto participativo</p>
+          <%= link_to debates_path do %>
+            <%= image_tag('decide.png') %>
+            <p>Elige a qué proyectos se destina el presupuesto participativo</p>
+          <% end %>
         </div>
       </div>
     </div>
