@@ -28,13 +28,32 @@ class CensusApi
   class Response
     require 'net/http'
 
-    def valid?
-      @body == 'OK'
+    def initialize(body)
+      @body = Nokogiri::XML(body)
     end
 
-    def message
-      @body
+    def valid?
+      @body.xpath('//estado').text == 'OK'
     end
+
+    def postal_code
+      @body.xpath('//cp').text
+    end
+
+    def district_code
+      @body.xpath('//distrito').text
+    end
+
+    def errors
+      case (@body.xpath('//estado').text)
+        when 'OK FECHA NO COINCIDE'
+          :birth_date_no_correct
+        when 'NO OK ERROR EN CENSO'
+          :error_verifying_census
+      end
+    end
+
+
   end
 
   private
@@ -48,9 +67,7 @@ class CensusApi
     response = nil
     request = Net::HTTP::Get.new(request_uri)
     request["Content-Type"] = "application/x-www-form-urlencoded"
-    response = @client.request(request)
-    xml = Nokogiri::XML(response.body)
-    xml.xpath('estado').text
+    response = @client.request(request).body
   end
 
   def stubbed_response(document_type, document_number, date_of_birth)

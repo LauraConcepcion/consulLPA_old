@@ -1,0 +1,13 @@
+<% if error = ([:error_verifying_census, :birth_date_no_correct] & @residence.errors.keys).first %>
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+      <%= t("officing.residence.new.#{error}") %>
+  </div>
+
+<% else %>
+  <%= render "shared/errors",
+             resource: @residence,
+             message: t("officing.residence.new.form_errors")  %>
+<% end %>
